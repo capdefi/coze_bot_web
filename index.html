@@ -3,31 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coze Bot</title>
-  <script src="https://cdn.coze.cn/sdk/webchat.js"></script>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-    }
-    #coze-chat {
-      height: 100vh;
-      width: 100vw;
-    }
-  </style>
+  <title>智能客服助手</title>
 </head>
-<body>
-  <div id="coze-chat"></div>
+<body style="margin: 0; padding: 0; height: 100vh;">
+  <!-- Coze 嵌入容器 -->
+  <div id="coze-widget" style="width: 100%; height: 100vh;"></div>
+
+  <!-- 嵌入脚本：替换 YOUR_BOT_ID -->
   <script>
-    window.cozeWebChatConfig = {
-      bot_id: "7473124280138924072",
-      welcome_message: "欢迎使用 AI 聊天助手！"
-    };
-    window.onload = function () {
-      CozeWebChat.init(document.getElementById("coze-chat"));
+    window.cozeSettings = {
+      bot_id: "7473124280138924072" // ← 把这个替换为你的真实 bot ID
     };
   </script>
+  <script src="https://sdk.coze.com/widget.js"></script>
 </body>
 </html>
